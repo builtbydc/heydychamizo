@@ -1,6 +1,6 @@
 :root {
     --box-shadow-size: 0.25rem;
-    --pre-box-shadow: var(--box-shadow-size) var(--box-shadow-size) var(--box-shadow-size) black;
+    --pre-box-shadow: var(--box-shadow-size) var(--box-shadow-size) var(--box-shadow-size) rgba(0, 0, 0, 0.4);
 }
 
 @font-face {
@@ -18,21 +18,41 @@
 }
 
 html,body {
-    background-color: rgb(2, 0, 36);
+    background-color: gray;
 }
 
 header {
-    margin: 1rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
     padding: 1rem;
 
-    background: rgb(2,0,36);
-    background: linear-gradient(18deg, rgba(2,0,36,1) 0%, rgba(86,9,121,1) 35%, rgba(255,0,224,1) 100%);
-
+    /*
+    background: rgb(255,112,166);
+    background: linear-gradient(33deg, rgba(255,112,166,1) 0%, rgba(255,151,112,1) 50%, rgba(255,214,112,1) 100%);
+    */
+    background-color: black;
     border-radius: 1rem;
+
+    box-shadow: var(--pre-box-shadow);
 }
 
 h1 {
     color: white;
     font-family: "al-veshion";
-    font-size: 3rem;
+    font-size: 4rem;
+}
+
+section {
+
+    position: relative;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+
+    box-shadow: var(--pre-box-shadow);
+
+    background-color: white;
 }
