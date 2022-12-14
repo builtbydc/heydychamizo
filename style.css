@@ -1,0 +1,39 @@
+:root {
+    --box-shadow-size: 0.25rem;
+    --pre-box-shadow: var(--box-shadow-size) var(--box-shadow-size) var(--box-shadow-size) black;
+}
+
+@font-face {
+    font-family: "source-sans";
+    src: url(./fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf);
+}
+@font-face {
+    font-family: "al-veshion";
+    src: url(./fonts/Al_Veshion_PersonalUseOnly.ttf);
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "source-sans";
+}
+
+html,body {
+    background-color: rgb(2, 0, 36);
+}
+
+header {
+    margin: 1rem;
+    padding: 1rem;
+
+    background: rgb(2,0,36);
+    background: linear-gradient(18deg, rgba(2,0,36,1) 0%, rgba(86,9,121,1) 35%, rgba(255,0,224,1) 100%);
+
+    border-radius: 1rem;
+}
+
+h1 {
+    color: white;
+    font-family: "al-veshion";
+    font-size: 4rem;
+    text-shadow: 0 0 0.2rem;
+}
