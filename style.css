@@ -79,6 +79,18 @@ header * {
     font-family: "al-veshion";
 }
 
+h1, h2 {
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
 .selection-bar {
     /* reset table defaults */
     border-collapse: collapse;

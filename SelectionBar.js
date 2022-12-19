@@ -5,7 +5,7 @@ class SelectionBar {
         for(let i = 0; i < this.options.length; i++)
             this.options[i].addEventListener("click", () => {
                 this.makeSelection(i)
-                displayContent();
+                refreshContent();
             });
         this.makeSelection(0);
     }

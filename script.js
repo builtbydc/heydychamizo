@@ -1,4 +1,8 @@
-function displayContent() {
-    console.log(SelectionBar.activeIndexOfId("first-selection-bar"));
-    console.log(SelectionBar.activeIndexOfId("second-selection-bar"));
+function refreshContent() {
+    let category = SelectionBar.activeIndexOfId("category");
+    let network = SelectionBar.activeIndexOfId("network");
+    
+    document.getElementById("first").children[1].innerHTML = 
+            "category: " + category + " network: " + network;
 }
+refreshContent();
