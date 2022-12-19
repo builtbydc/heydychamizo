@@ -1,7 +1,7 @@
 :root {
-    --dark-color: #4c3b4d;
-    --medium-color: #ada8b6;
-    --light-color: #ffeedb;
+    --dark-color: #7776bc;
+    --medium-color: #cdc7e5;
+    --light-color: #fffbdb;
 
     --box-shadow-size: 0.25rem;
     --pre-box-shadow: var(--box-shadow-size) var(--box-shadow-size) var(--box-shadow-size) rgba(0, 0, 0, 0.4);
@@ -14,9 +14,13 @@
 @keyframes fade-in {
     from {
         opacity: 0;
+        font-size: 1rem;
+        padding: 0.5rem;
     } 
     to {
         opacity: 1;
+        font-size: 1.1rem;
+        padding: 0.4rem;
     }
 }
 
@@ -99,4 +103,6 @@ header * {
 
 .selection-bar tbody tr td:hover {
     animation: fade-in 300ms;
+    font-size: 1.1rem;
+    padding: 0.4rem;
 }
