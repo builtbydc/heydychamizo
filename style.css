@@ -1,10 +1,12 @@
 :root {
-    --dark-color: #7776bc;
+    --black-color: black;
+    --dark-color: #dfb1cf;
     --medium-color: #cdc7e5;
-    --light-color: #fffbdb;
+    --light-color: #fae485;
+    --white-color: #fffbdb;
 
     --box-shadow-size: 0.25rem;
-    --pre-box-shadow: var(--box-shadow-size) var(--box-shadow-size) var(--box-shadow-size) rgba(0, 0, 0, 0.4);
+    --pre-box-shadow: var(--box-shadow-size) var(--box-shadow-size) 0.5rem rgba(0, 0, 0, 0.4);
     --selection-bar-option-border-bs: 0 0 0 0.125rem var(--light-color) inset;
     --pre-margin: 1rem 1rem 0 1rem;
     --pre-padding: 1rem;
@@ -44,7 +46,8 @@
 }
 
 html, body {
-    background-color: var(--medium-color);
+    background: rgb(73,160,102);
+    background: linear-gradient(90deg, rgba(73,160,102,1) 0%, rgba(246,227,132,1) 40%, rgba(250,228,133,1) 50%, rgba(249,227,134,1) 60%, rgba(223,177,207,1) 100%); 
 }
 
 /* padding */ 
@@ -64,15 +67,25 @@ header, section, .selection-bar, .selection-bar tbody tr td {
 }
 
 /* light color */ 
-section, .selection-bar {
+.selection-bar {
     background-color: var(--light-color);
-    color: var(--dark-color);
+    color: var(--black-color);
+}
+
+section {
+    background-color: var(--white-color);
+    color: black;
 }
 
 /* dark color */ 
-header, .selection-bar tbody tr td:hover, .selection-bar tbody tr td.SELECTED {
+header {
     background-color: var(--dark-color);
     color: var(--light-color);
+}
+
+.selection-bar tbody tr td:hover, .selection-bar tbody tr td.SELECTED {
+    background-color: var(--dark-color);
+    color: var(--black-color);
 }
 
 header * {
@@ -80,7 +93,7 @@ header * {
 }
 
 h1, h2 {
-    font-weight: normal;
+    text-shadow: 0.15rem 0.15rem 0.3rem rgba(0, 0, 0, 0.4);
 }
 
 h1 {
@@ -117,4 +130,27 @@ h2 {
     animation: fade-in 300ms;
     font-size: 1.1rem;
     padding: 0.4rem;
+}
+
+@media only screen and (min-width: 45rem) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+section {
+    text-align: center;
+}
+
+video {
+    height: 80vh;
+    width: auto;
+    box-shadow: var(--pre-box-shadow);
 }
