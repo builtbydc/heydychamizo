@@ -2,49 +2,28 @@
 <html>
     <head>
         <title>Heydy Chamizo</title>
-        <link rel="stylesheet" href="style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+            * {
+                margin: 0;
+                padding:0;
+            }
+            @media only screen and (max-width: 100vh) {
+                img {
+                    width: 100vw;
+                    height: auto;
+                }
+            }
+
+            @media only screen  and (min-width: 100vh){
+                img {
+                    height: 100vh;
+                    width: auto;
+                }
+            }
+        </style>
     </head>
 
     <body>
-        <header>
-            <h1>Heydy Chamizo</h1>
-            <h2>Portfolio</h2>
-        </header>
-
-        <table class="selection-bar" id="category"><tbody><tr>
-            <td>Sale!</td>
-            <td>New Item</td>
-            <td>Black Friday</td>
-            <td>Awareness</td>
-        </tr></tbody></table>
-
-        <table class="selection-bar" id="network"><tbody><tr>
-            <td>Instagram</td>
-            <td>Facebook</td>
-            <td>Twitter</td>
-            <td>YouTube</td>
-        </tr></tbody></table>
-
-        <div id="content">
-            <section id="first">
-                <h3>First</h2>
-                <div>This is the first section.</div>
-            </section>
-
-            <section id="second">
-                <h3>Second</h2>
-                <div>This is the next section.</div>
-            </section>
-
-            <section id="third">
-                <h3>Third</h2>
-                <div>This is the next section.</div>
-            </section>
-        </div>
-
-        <!--scripts-->
-        <script src="./SelectionBar.js"></script>
-        <script src="./script.js"></script>
+        <img src="./IMG_8527.png" alt="silliness">
     </body>
 </html>
