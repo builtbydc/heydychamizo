@@ -1,18 +1,7 @@
-let letterH;
-let letterE;
-let letterY1;
-let letterD;
-let letterY2;
+
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
-    letterH = new Letter("H", 50, windowWidth*Math.random(), 100*Math.random()-200, windowWidth/2 - 77.5, windowHeight/2 + 25);
-    letterE = new Letter("e", 50, windowWidth*Math.random(), 100*Math.random()-200, windowWidth/2 - 77.5 + 40, windowHeight/2 + 25);
-    letterY1 = new Letter("y", 50, windowWidth*Math.random(), 100*Math.random()-200, windowWidth/2 - 77.5 + 70, windowHeight/2 + 25);
-    letterD = new Letter("d", 50, windowWidth*Math.random(), 100*Math.random()-200, windowWidth/2 - 77.5 + 95, windowHeight/2 + 25);
-    letterY2 = new Letter("y", 50, windowWidth*Math.random(), 100*Math.random()-200, windowWidth/2 - 77.5 + 125, windowHeight/2 + 25);
 
-    background(255, 200, 200);
 }
 
 function draw() {
@@ -80,15 +69,6 @@ class Letter {
     }
 
     display() {
-        fill(0);
-        textSize(this.size);
 
-        push();
-        translate(this.x, this.y);
-        rotate(this.angleSign*this.angle);
-        text(this.letter, 0, 0);
-        pop();
-
-        this.update();
     }
 }
