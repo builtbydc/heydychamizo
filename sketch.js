@@ -1,5 +1,6 @@
 let colors = [];
-let t = 0;
+
+let bubbles = [];
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -16,18 +17,90 @@ function setup() {
     colors.push(color(189, 178, 255));
     colors.push(color(255, 198, 255));
     colors.push(color(255, 255, 252));
-
-    background(0);
 }
 
 function draw() {
+    background(0);
+    if(bubbles.length < 100) {
+        let size = 100*Math.random() + 25;
+        let x = (windowWidth - size)*Math.random() + 0.5*size;
+        let y = (windowHeight - size)*Math.random() + 0.5*size;
+        let color = colors[~~(9*Math.random())];
 
-    if(t == 1) {
-        let ellipseSize = 100*Math.random();
-        stroke(colors[~~(9*Math.random())]);
-        ellipse((windowWidth - ellipseSize)*Math.random() + 0.5*ellipseSize, (windowHeight - ellipseSize)*Math.random() + 0.5*ellipseSize, ellipseSize, ellipseSize);
-        t = 0;
+        let bubble = new Bubble(x, y, size, color);
+        bubbles.push(bubble);
     }
-    t++;
 
+
+    for(let b of bubbles) {
+        b.display();
+    }
+}
+
+class Bubble {
+    constructor() {
+        this.createRandom();
+    }
+
+    createRandom() {
+        this.size = 0;
+        this.sizeGoal = 100*Math.random() + 25;
+        this.x = (windowWidth - this.size)*Math.random() + 0.5*this.size;
+        this.y = (windowHeight - this.size)*Math.random() + 0.5*this.size;
+        this.color = colors[~~(9*Math.random())];
+        this.dx = 6*Math.random() + 4;
+        this.dy = 6*Math.random() + 4;
+        if(Math.random() > 0.5) this.dx *= -1;
+        if(Math.random() > 0.5) this.dy *= -1;
+
+        this.lifetime = 0;
+        this.sizeVariation = 10*Math.random() + 10;
+
+        this.theta = Math.atan2(-this.y + windowHeight / 2, -this.x + windowWidth / 2);
+        this.dd = 0.1;
+        this.ddx = this.dd*Math.cos(this.theta);
+        this.ddy = this.dd*Math.sin(this.theta);
+    }
+
+    leftTheScreen() {
+        if( this.x > windowWidth + 0.5*this.size  ||
+            this.x < 0 - 0.5*this.size            ||
+            this.y > windowHeight + 0.5*this.size ||
+            this.y < 0 - 0.5*this.size) 
+        {
+            return true;
+        } else return false;
+    }
+
+    update() {
+        this.x += this.dx;
+        this.y += this.dy;
+
+        this.theta = Math.atan2(-this.y + windowHeight / 2, -this.x + windowWidth / 2);
+        this.ddx = this.dd*Math.cos(this.theta);
+        this.ddy = this.dd*Math.sin(this.theta);
+        this.dx+=this.ddx;
+        this.dy+= this.ddy;
+
+        if(this.leftTheScreen()) {
+            this.createRandom();
+        }
+        this.lifetime++;
+
+        if(this.size < this.sizeGoal) {
+            this.size += 1;
+            this.lifetime = 0;
+        }
+    }
+
+    display() {
+        push();
+        stroke(this.color);
+        let sizeCalculation = this.size;
+        if(this.size >= this.sizeGoal) sizeCalculation += this.sizeVariation*Math.sin(this.lifetime / 10);
+        ellipse(this.x, this.y, sizeCalculation, sizeCalculation);
+        pop();
+
+        this.update();
+    }
 }
