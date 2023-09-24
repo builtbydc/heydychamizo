@@ -1,0 +1,134 @@
+:root {
+    --page-width: 94rem;
+    --page-padding: 5rem;
+    --page-padding-mobile: 2vw;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+li {
+    font-size: 1.5rem;
+}
+
+body {
+    background-color: aqua;
+}
+
+#header-box, #content-box {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+header {
+    background-color: white;
+}
+
+#content {
+    background-color: yellow;
+}
+
+header, #content {
+    width: var(--page-width);
+    padding: 0 var(--page-padding) 0 var(--page-padding);
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav li {
+    display: inline-flex;
+    justify-content: center;
+    list-style-type: none;
+
+    padding: 0.5rem 0 0.5rem 0;
+    width: 10rem;
+    margin: 0 0.5rem 0.5rem 0.5rem;
+
+    
+    background-color: black;
+    color: white;
+    border-radius: 0.25rem;
+}
+
+h1, nav {
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+h2 {
+    padding: 1rem 1rem 0 1rem;
+}
+
+img {
+    width: 30rem;
+    padding: 0.5rem;
+}
+
+#content div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+@media only screen and (max-width: 104rem) {
+    header, #content {
+        width: 100%;
+        padding: 0 var(--page-padding-mobile) 0 var(--page-padding-mobile);
+    }
+
+    h2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    #content div {
+        justify-content: center;
+    }
+
+    img {
+        width: calc(50% - 1rem);
+    }
+}
+
+@media only screen and (max-width: 67rem) {
+    header, #content {
+        width: 100%;
+        padding: 0 var(--page-padding-mobile) 0 var(--page-padding-mobile);
+    }
+
+    h2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    #content div {
+        justify-content: center;
+    }
+
+    img {
+        width: 100%;
+    }
+}
