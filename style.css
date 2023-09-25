@@ -1,3 +1,23 @@
+@font-face {
+    font-family: "sunflower";
+    src: url("sunflower.otf");
+}
+
+@font-face {
+    font-family: "avigea";
+    src: url("Avigea.otf");
+}
+
+@font-face {
+    font-family: "boiling";
+    src: url("boiling.ttf");
+}
+
+@font-face {
+    font-family: "mercy";
+    src: url("mercy.ttf");
+}
+
 :root {
     --page-width: 94rem;
     --page-padding: 5rem;
@@ -7,10 +27,20 @@
 * {
     margin: 0;
     padding: 0;
+
+    color: white;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: black;
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
+    font-family: "mercy";
+    font-weight: normal;
 }
 
 h2 {
@@ -21,8 +51,10 @@ li {
     font-size: 1.5rem;
 }
 
-body {
-    background-color: aqua;
+p {
+    font-size: 1.5rem;
+
+    padding: 1rem 1rem 0 1rem;
 }
 
 #header-box, #content-box {
@@ -32,16 +64,23 @@ body {
 }
 
 header {
-    background-color: white;
-}
 
-#content {
-    background-color: yellow;
+    position: relative;
+
+    text-align: center;
 }
 
 header, #content {
     width: var(--page-width);
     padding: 0 var(--page-padding) 0 var(--page-padding);
+}
+
+#logo {
+    position: absolute;
+    top: 0.5rem;
+    left: -3.43rem;
+
+    height: 12.4rem;
 }
 
 h1 {
@@ -55,7 +94,11 @@ nav ul {
 }
 
 nav a {
-    text-decoration: none;
+    color: white;
+}
+
+nav a:hover, nav a > li:hover {
+    color: #fa198b;
 }
 
 nav li {
@@ -63,18 +106,16 @@ nav li {
     justify-content: center;
     list-style-type: none;
 
-    padding: 0.5rem 0 0.5rem 0;
-    width: 10rem;
-    margin: 0 0.5rem 0.5rem 0.5rem;
+    padding: 0 0.5rem 0 0.5rem;
 
-    
-    background-color: black;
-    color: white;
-    border-radius: 0.25rem;
 }
 
-h1, nav {
-    padding: 0.5rem 0 0.5rem 0;
+h1 {
+    padding: 4rem 0 0 0;
+}
+
+nav {
+    padding: 1rem 0 1.5rem 0
 }
 
 h2 {
@@ -111,6 +152,16 @@ img {
     img {
         width: calc(50% - 1rem);
     }
+
+    h1 {
+        padding: 0.5rem 0 0 0;
+    }
+
+    #logo {
+        width: unset;
+        position: unset;
+        margin-top: 0.5rem;
+    }
 }
 
 @media only screen and (max-width: 67rem) {
@@ -130,5 +181,16 @@ img {
 
     img {
         width: 100%;
+    }
+
+    h1 {
+        padding: 0.5rem 0 0 0;
+        font-size: min(3.5rem, calc(100*3.5vw/30));
+    }
+
+    #logo {
+        width: unset;
+        position: unset;
+        margin-top: 0.5rem;
     }
 }
