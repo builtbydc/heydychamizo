@@ -18,3 +18,15 @@ function removeLetterColor(id) {
 for(let i = 0; i <= 11; i++) {
     document.getElementById("name-" + i).onclick = nameColor;
 }
+
+function logoSpin() {
+    document.getElementById("logo").classList.add("spin");
+    document.getElementById("logo").classList.add("shrink");
+    setTimeout(removeSpinClass, 1000);
+}
+
+function removeSpinClass() {
+    document.getElementById("logo").classList.remove("spin");
+}
+
+document.getElementById("logo").onclick = logoSpin;
