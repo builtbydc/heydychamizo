@@ -19,9 +19,12 @@ for(let i = 0; i <= 11; i++) {
     document.getElementById("name-" + i).onclick = nameColor;
 }
 
+function logoShrink() {
+    document.getElementById("logo").classList.add("shrink");
+} document.getElementById("body").onload = logoShrink;
+
 function logoSpin() {
     document.getElementById("logo").classList.add("spin");
-    document.getElementById("logo").classList.add("shrink");
     setTimeout(removeSpinClass, 1000);
 }
 
